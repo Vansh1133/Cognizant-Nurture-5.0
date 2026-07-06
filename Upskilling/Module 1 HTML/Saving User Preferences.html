@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saving User Preferences</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 400px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        // Load saved preference
+        window.onload = function () {
+            let savedEvent = localStorage.getItem("eventType");
+
+            if (savedEvent) {
+                document.getElementById("event").value = savedEvent;
+            }
+        };
+
+        // Save preference
+        function savePreference() {
+            let eventType = document.getElementById("event").value;
+
+            localStorage.setItem("eventType", eventType);
+            sessionStorage.setItem("currentEvent", eventType);
+
+            alert("Preference saved successfully!");
+        }
+
+        // Clear storage
+        function clearPreferences() {
+            localStorage.clear();
+            sessionStorage.clear();
+
+            document.getElementById("event").value = "";
+
+            alert("Preferences cleared!");
+        }
+    </script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Event Preferences</h2>
+
+    <label>Select Your Preferred Event:</label>
+
+    <select id="event">
+        <option value="">-- Select Event --</option>
+        <option value="Sports Day">Sports Day</option>
+        <option value="Workshop">Workshop</option>
+        <option value="Cultural Program">Cultural Program</option>
+        <option value="Tree Plantation">Tree Plantation</option>
+    </select>
+
+    <button onclick="savePreference()">Save Preference</button>
+
+    <button onclick="clearPreferences()">Clear Preferences</button>
+
+</div>
+
+</body>
+</html>

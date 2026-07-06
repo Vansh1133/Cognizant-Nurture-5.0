@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Promo Video</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        video {
+            border: 2px solid black;
+        }
+
+        #message {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 80%;
+            padding: 8px;
+            margin-top: 15px;
+        }
+    </style>
+
+    <script>
+        // Display message when video is ready
+        function videoReady() {
+            document.getElementById("message").innerHTML =
+                "Video ready to play";
+        }
+
+        // Warn user before leaving the page
+        window.onbeforeunload = function () {
+            return "You have unsaved changes. Are you sure you want to leave?";
+        };
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Community Event Promo</h2>
+
+    <video width="500" controls oncanplay="videoReady()">
+        <source src="event-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <p id="message"></p>
+
+    <h3>Registration Form</h3>
+
+    <input type="text" placeholder="Enter your name">
+
+</div>
+
+</body>
+</html>
