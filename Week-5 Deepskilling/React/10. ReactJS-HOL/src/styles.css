@@ -1,0 +1,46 @@
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 32px 20px 40px;
+  display: grid;
+  justify-items: center;
+  gap: 22px;
+}
+
+.hero-image {
+  width: min(520px, 100%);
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.office-list {
+  width: min(960px, 100%);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.office-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+}
+
+.office-card h2 {
+  margin-top: 0;
+}
+
+.office-card p:last-child {
+  font-weight: 700;
+}

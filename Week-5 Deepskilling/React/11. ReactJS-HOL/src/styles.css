@@ -1,0 +1,73 @@
+html, body, #root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #eff6ff, #f8fafc);
+  color: #1f2937;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 32px 20px;
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+}
+
+.panel {
+  width: min(760px, 100%);
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+}
+
+.count {
+  font-size: 3rem;
+  margin: 0 0 16px;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  background: #2563eb;
+  color: white;
+  padding: 10px 18px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.converter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  min-width: 240px;
+}
+
+input {
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font: inherit;
+}
+
+.message {
+  margin-bottom: 0;
+  font-weight: 600;
+}
